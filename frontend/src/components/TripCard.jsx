@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const TripCard = ({ trip }) => {
+
+    const navigate = useNavigate();
 
     console.log("TRIP CARD DATA:", trip);
 
@@ -56,10 +60,11 @@ const TripCard = ({ trip }) => {
                 </p>
 
                 <button
-                    className="mt-4 w-full border border-[#1E3A32] text-[#1E3A32] rounded-lg py-2 text-sm hover:bg-[#1E3A32] hover:text-white transition"
-                >
-                    View Trip
-                </button>
+    onClick={() => navigate(`/user-itenrary/${trip._id}`)}
+    className="mt-4 w-full border border-[#1E3A32] text-[#1E3A32] rounded-lg py-2 text-sm hover:bg-[#1E3A32] hover:text-white transition"
+>
+    View Trip
+</button>
 
             </div>
 
