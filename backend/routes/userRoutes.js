@@ -42,18 +42,14 @@ router.post("/api/users/register", async (req, res) => {
             });
         }
 
-        // Hash password
-        const passwordHash = await bcrypt.hash(
-            password,
-            10
-        );
+        
 
         // Create user
         const user = await User.create({
             first: first.trim(),
             last: last.trim(),
             email: email.toLowerCase().trim(),
-            password_hash: passwordHash,
+            password_hash: password,
             profile_photo_url:
                 profile_photo_url || ""
         });

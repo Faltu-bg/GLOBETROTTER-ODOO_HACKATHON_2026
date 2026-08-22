@@ -41,14 +41,10 @@ const UserProfile = () => {
     loadProfile();
 
     // Refresh every 3 seconds
-    const interval = setInterval(() => {
-        loadProfile();
-    }, 3000);
+    
 
     // Stop interval when leaving page
-    return () => {
-        clearInterval(interval);
-    };
+
 
 }, [user, authLoading]);
 
