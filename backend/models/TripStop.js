@@ -30,8 +30,7 @@ const tripStopSchema = new mongoose.Schema(
 );
 
 tripStopSchema.index({
-  trip_id: 1,
-  stop_order: 1
+  trip_id: 1
 });
 
 module.exports = mongoose.model("TripStop", tripStopSchema);
