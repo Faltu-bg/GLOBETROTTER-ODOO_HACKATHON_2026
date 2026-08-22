@@ -1,4 +1,5 @@
 import PreviousTripCard from "./PreviousTripCard"
+import {Link} from'react-router-dom'
 
 const PreviousTrips = () => {
 
@@ -87,7 +88,7 @@ const PreviousTrips = () => {
           </div>
 
           <button className="shrink-0 px-8 py-3.5 rounded-full bg-[#C49A55] text-white font-medium hover:bg-[#B58A48] transition duration-300">
-            Plan a Trip →
+            <Link to="/create-trip">Plan Your Trip</Link>
           </button>
 
         </div>
