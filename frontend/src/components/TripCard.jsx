@@ -1,31 +1,70 @@
 const TripCard = ({ trip }) => {
-  return (
-    <div className="bg-[#FFFCF5] rounded-2xl overflow-hidden border border-[#DED8CA] shadow-sm hover:shadow-md transition">
 
-      <img
-        src={trip.image}
-        alt={trip.title}
-        className="w-full h-48 object-cover"
-      />
+    console.log("TRIP CARD DATA:", trip);
 
-      <div className="p-5">
+    const formatDate = (date) => {
+        if (!date) return "No date";
 
-        <h3 className="text-xl font-serif text-[#182321]">
-          {trip.title}
-        </h3>
+        return new Date(date).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+        });
+    };
 
-        <p className="text-sm text-[#6F716E] mt-1">
-          {trip.location}
-        </p>
+    return (
+        <div className="bg-[#FFFCF5] rounded-2xl overflow-hidden border border-[#DED8CA] shadow-sm hover:shadow-md transition">
 
-        <button className="mt-4 w-full border border-[#1E3A32] text-[#1E3A32] rounded-lg py-2 text-sm hover:bg-[#1E3A32] hover:text-white transition">
-          View Trip
-        </button>
+            {/* Image */}
+            <div className="w-full h-48 bg-[#E9E3D5]">
 
-      </div>
+                {trip.cover_photo_url ? (
+                    <img
+                        src={trip.cover_photo_url}
+                        alt={trip.name}
+                        className="w-full h-full object-cover"
+                    />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                        <span className="text-[#6F716E]">
+                            No cover image
+                        </span>
+                    </div>
+                )}
 
-    </div>
-  )
-}
+            </div>
 
-export default TripCard
+            {/* Details */}
+            <div className="p-5">
+
+                <h3 className="text-xl font-serif text-[#182321]">
+                    {trip.name}
+                </h3>
+
+                <p className="text-sm text-[#6F716E] mt-2">
+                    {trip.description}
+                </p>
+
+                <p className="text-sm text-[#6F716E] mt-3">
+                    {formatDate(trip.start_date)}
+                    {" — "}
+                    {formatDate(trip.end_date)}
+                </p>
+
+                <p className="text-xs text-[#C49A55] mt-2 uppercase">
+                    {trip.status}
+                </p>
+
+                <button
+                    className="mt-4 w-full border border-[#1E3A32] text-[#1E3A32] rounded-lg py-2 text-sm hover:bg-[#1E3A32] hover:text-white transition"
+                >
+                    View Trip
+                </button>
+
+            </div>
+
+        </div>
+    );
+};
+
+export default TripCard;

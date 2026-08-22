@@ -24,8 +24,47 @@ app.get("/user", async (req, res) => {
     const users = await User.find();
     res.json(users);
 });
+app.get("/user/:userId", async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
 
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found"
+            });
+        }
 
+        res.json(user);
+
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            message: "Failed to fetch user",
+            error: error.message
+        });
+    }
+});
+
+app.get("/user/:userId/trips", async (req, res) => {
+    try {
+        const trips = await Trip.find({
+            user_id: req.params.userId
+        }).sort({
+            start_date: 1
+        });
+
+        res.json(trips);
+
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            message: "Failed to fetch user trips",
+            error: error.message
+        });
+    }
+});
 app.get("/trip", async (req, res) => {
     const trips = await Trip.find();
     res.json(trips);
