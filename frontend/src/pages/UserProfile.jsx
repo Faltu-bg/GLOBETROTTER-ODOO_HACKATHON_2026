@@ -1,7 +1,7 @@
-import ProfileHeader from '../components/ProfileHeader'
-import Preferences from '../components/Preferences'
-import TripSection from '../components/TripSection'
-import Delete from '../components/Delete'
+import ProfileHeader from '../components/profile/ProfileHeader'
+import Preferences from '../components/profile/Preferences'
+import TripSection from '../components/profile/TripSection'
+import Delete from '../components/profile/Delete'
 import Navbar from '../components/Navbar'
 
 const UserProfile = () => {

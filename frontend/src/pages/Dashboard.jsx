@@ -1,8 +1,8 @@
-import Banner from "../components/Banner"
+import Banner from "../components/dashboard/Banner"
 import Navbar from "../components/Navbar"
-import PreviousTrips from "../components/PreviousTrips"
-import RegionalSelection from "../components/RegionalSelection"
-import SearchBar from "../components/Searchbar"
+import PreviousTrips from "../components/dashboard/PreviousTrips"
+import RegionalSelection from "../components/dashboard/RegionalSelection"
+import SearchBar from "../components/dashboard/SearchBar"
 
 const Dashboard = () => {
     return <div>

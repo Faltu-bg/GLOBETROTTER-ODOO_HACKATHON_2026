@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar"
-import PlanTrip from "../components/PlanTrip"
-import SuggestionCard from "../components/SuggestionCard"
-import TripSuggestions from "../components/TripSuggestions"
+import PlanTrip from "../components/createTrip/PlanTrip"
+import TripSuggestions from "../components/createTrip/TripSuggestions"
 
 const CreateTrip = () => {
   return (<div>

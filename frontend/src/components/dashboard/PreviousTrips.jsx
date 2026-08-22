@@ -54,7 +54,7 @@ const PreviousTrips = () => {
           </div>
 
           <button className="text-sm text-[#173B35] hover:text-[#C49A55] transition">
-            View All →
+            <Link to="/my-trips">View All →</Link>
           </button>
         </div>
 
