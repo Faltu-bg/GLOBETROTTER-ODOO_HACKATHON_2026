@@ -9,6 +9,7 @@ const User = require("./models/User.js");
 const Trip = require("./models/Trip.js");
 const TripStop = require("./models/TripStop.js");
 const Activity = require("./models/Activity.js");
+const userRoutes = require("./routes/userRoutes.js")
 
 app.use(cors());
 app.use(express.json());
@@ -17,7 +18,7 @@ mongo.connect(`mongodb+srv://GlobeTrotter:GlobeTrotter2026@cluster0.z97tamy.mong
     console.log("Mongo connected to atlas")
 })
 
-
+app.use("/",userRoutes)
 app.get("/user", async (req, res) => {
     const users = await User.find();
     res.json(users);
