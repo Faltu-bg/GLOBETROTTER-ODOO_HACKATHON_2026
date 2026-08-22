@@ -1,11 +1,11 @@
-import Navbar from "./components/Navbar"
-import Dashboard from "./pages/Dashboard"
-const App=()=>{
-    return (
-    <div className="min-h-screen bg-[#F8F7F3]">
-      <Navbar />
-      <Dashboard/>
-    </div>
-  )
+import BuildItinerary from "./pages/BuildItenrary";
+
+function App() {
+  return (
+    <BuildItinerary
+      tripId="6a894c43fde50014a6b8e336"
+    />
+  );
 }
-export default App
+
+export default App;
