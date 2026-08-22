@@ -2,17 +2,18 @@ const Navbar = () => {
   return (
     <nav className="w-full border-b border-[#D9DAD5] bg-[#F8F7F3]">
       <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
-        
+
         <div className="text-2xl font-semibold text-[#173B35]">
           GlobalTrotter
         </div>
 
-        <button className="w-11 h-11 rounded-full border border-[#173B35] flex items-center justify-center hover:bg-[#173B35] transition duration-300 group">
-          <span className="w-5 h-[1px] bg-[#173B35] relative group-hover:bg-white">
-            <span className="absolute w-5 h-[1px] bg-[#173B35] -top-2 group-hover:bg-white"></span>
-            <span className="absolute w-5 h-[1px] bg-[#173B35] top-2 group-hover:bg-white"></span>
-          </span>
-        </button>
+        <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-[#173B35]">
+          <img
+            src="https://i.pravatar.cc/150?img=12"
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
       </div>
     </nav>
