@@ -18,19 +18,13 @@ const TripCard = ({ trip }) => {
             {/* Image */}
             <div className="w-full h-48 bg-[#E9E3D5]">
 
-                {trip.cover_photo_url ? (
+               
                     <img
-                        src={trip.cover_photo_url}
+                        src={"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"}
                         alt={trip.name}
                         className="w-full h-full object-cover"
                     />
-                ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                        <span className="text-[#6F716E]">
-                            No cover image
-                        </span>
-                    </div>
-                )}
+                
 
             </div>
 
