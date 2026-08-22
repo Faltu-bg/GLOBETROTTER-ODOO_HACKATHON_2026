@@ -8,11 +8,8 @@ const activitySchema = new mongoose.Schema(
       required: true
     },
 
-    category_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "ActivityCategory"
-    },
-
+   
+    
     name: {
       type: String,
       required: true,
@@ -42,31 +39,17 @@ const activitySchema = new mongoose.Schema(
       default: 0
     },
 
-    currency: {
-      type: String,
-      default: "INR"
-    },
 
     location: {
       type: String
-    },
-
-    latitude: {
-      type: Number
-    },
-
-    longitude: {
-      type: Number
-    },
-
-    notes: {
-      type: String
-    },
-
-    activity_order: {
-      type: Number,
-      required: true
     }
+
+
+  
+
+  
+
+  
   },
   {
     timestamps: true

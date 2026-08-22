@@ -9,7 +9,7 @@ const tripStopSchema = new mongoose.Schema(
     },
 
     city_id: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       ref: "City",
       required: true
     },
@@ -19,12 +19,8 @@ const tripStopSchema = new mongoose.Schema(
       required: true
     },
 
-    stop_order: {
-      type: Number,
-      required: true
-    },
 
-    notes: {
+    description: {
       type: String
     }
   },
