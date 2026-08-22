@@ -8,10 +8,10 @@ const tripStopSchema = new mongoose.Schema(
       required: true
     },
 
-    city_id: {
+    city: {
       type: String,
-      ref: "City",
-      required: true
+      required: true,
+      trim: true
     },
 
     date: {
@@ -19,9 +19,9 @@ const tripStopSchema = new mongoose.Schema(
       required: true
     },
 
-
     description: {
-      type: String
+      type: String,
+      default: ""
     }
   },
   {
@@ -30,7 +30,8 @@ const tripStopSchema = new mongoose.Schema(
 );
 
 tripStopSchema.index({
-  trip_id: 1
+  trip_id: 1,
+  date: 1
 });
 
 module.exports = mongoose.model("TripStop", tripStopSchema);
