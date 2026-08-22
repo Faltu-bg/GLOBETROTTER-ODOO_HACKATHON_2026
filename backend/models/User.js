@@ -20,7 +20,6 @@ const userSchema=new mongooose.Schema(
     password_hash: {
       type: String,
       required: true,
-      select: false
     },
 
     profile_photo_url: {
