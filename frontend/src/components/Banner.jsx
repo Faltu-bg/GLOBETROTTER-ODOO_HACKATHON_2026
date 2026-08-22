@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <section className="w-full px-6 pt-6">
-      <div className="max-w-8xl mx-auto h-[420px] rounded-2xl overflow-hidden relative">
+      <div className="max-w-7xl mx-auto h-[420px] rounded-2xl overflow-hidden relative">
 
         <img
           src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80"
