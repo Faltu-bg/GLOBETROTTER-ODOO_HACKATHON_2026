@@ -14,7 +14,7 @@ const App=()=>{
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create-trip" element={<CreateTrip />} />
-        <Route path="/user-profile" element={<UserProfile />} />
+       <Route path="/profile" element={<UserProfile />} />
         <Route path="/user-itenrary" element={<BuildItinerary
       tripId="6a894c43fde50014a6b8e336"
     />}/>

@@ -1,34 +1,40 @@
-import TripCard from './TripCard'
+import TripCard from "./TripCard";
 
 const TripSection = ({ label, title, trips }) => {
-  return (
-    <section className="mt-12">
 
-      <div className="mb-5">
+    // Don't show section if there are no trips
+    if (!trips || trips.length === 0) {
+        return null;
+    }
 
-        <p className="text-[#C49A55] text-sm uppercase tracking-[0.2em]">
-          {label}
-        </p>
+    return (
+        <section className="mt-12">
 
-        <h2 className="text-3xl font-serif text-[#182321] mt-1">
-          {title}
-        </h2>
+            <div className="mb-5">
 
-      </div>
+                <p className="text-[#C49A55] text-sm uppercase tracking-[0.2em]">
+                    {label}
+                </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h2 className="text-3xl font-serif text-[#182321] mt-1">
+                    {title}
+                </h2>
 
-        {trips.map((trip) => (
-          <TripCard
-            key={trip.id}
-            trip={trip}
-          />
-        ))}
+            </div>
 
-      </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    </section>
-  )
-}
+                {trips.map((trip) => (
+                    <TripCard
+                        key={trip._id}
+                        trip={trip}
+                    />
+                ))}
 
-export default TripSection
+            </div>
+
+        </section>
+    );
+};
+
+export default TripSection;

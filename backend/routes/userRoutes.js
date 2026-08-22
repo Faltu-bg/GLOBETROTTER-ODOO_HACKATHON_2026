@@ -82,11 +82,44 @@ router.post("/api/users/register", async (req, res) => {
 
 
 // PROTECTED USER ROUTE
+// PROTECTED USER ROUTE
 router.get(
     "/api/users",
     verification,
-    (req, res) => {
-        res.send("you are in");
+    async (req, res) => {
+
+        try {
+
+            const user = await User.findById(req.user.id)
+                .select("-password_hash");
+
+            if (!user) {
+                return res.status(404).json({
+                    message: "User not found"
+                });
+            }
+
+            res.json({
+                user: {
+                    id: user._id,
+                    first: user.first,
+                    last: user.last,
+                    email: user.email,
+                    profile_photo_url: user.profile_photo_url
+                }
+            });
+
+        } catch (error) {
+
+            console.error(error);
+
+            res.status(500).json({
+                message: "Failed to fetch authenticated user",
+                error: error.message
+            });
+
+        }
+
     }
 );
 

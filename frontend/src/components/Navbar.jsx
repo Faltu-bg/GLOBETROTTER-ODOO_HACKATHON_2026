@@ -10,7 +10,7 @@ const Navbar = () => {
         </div>
 
         <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-[#173B35]">
-          <Link to="/user-profile">
+          <Link to="/profile">
           <img
             src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80"
             alt="Profile"
