@@ -1,6 +1,10 @@
 import SuggestionCard from './SuggestionCard'
 const TripSuggestions = () => {
-    
+    const handleAddToTrip = (suggestion) => {
+  console.log("Adding to trip:", suggestion);
+};
+
+
   const suggestions = [
     {
       id: 1,

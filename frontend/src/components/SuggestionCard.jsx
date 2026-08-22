@@ -1,8 +1,16 @@
-const SuggestionCard = ({ image, title, location, type }) => {
+const SuggestionCard = ({
+  image,
+  title,
+  location,
+  type,
+  onAdd
+}) => {
+
   return (
     <div className="group bg-white rounded-2xl overflow-hidden border border-[#E5E2D9] hover:shadow-lg transition duration-300">
 
       <div className="h-52 overflow-hidden relative">
+
         <img
           src={image}
           alt={title}
@@ -12,6 +20,7 @@ const SuggestionCard = ({ image, title, location, type }) => {
         <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#F8F7F3]/90 text-xs text-[#173B35]">
           {type}
         </div>
+
       </div>
 
       <div className="p-5">
@@ -24,14 +33,18 @@ const SuggestionCard = ({ image, title, location, type }) => {
           {title}
         </h3>
 
-        <button className="mt-4 w-full py-2.5 rounded-lg border border-[#173B35] text-[#173B35] text-sm hover:bg-[#173B35] hover:text-white transition duration-300">
+        <button
+          type="button"
+          onClick={onAdd}
+          className="mt-4 w-full py-2.5 rounded-lg border border-[#173B35] text-[#173B35] text-sm hover:bg-[#173B35] hover:text-white transition duration-300"
+        >
           Add to Trip
         </button>
 
       </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default SuggestionCard
+export default SuggestionCard;

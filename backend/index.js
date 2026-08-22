@@ -10,6 +10,7 @@ const Trip = require("./models/Trip.js");
 const TripStop = require("./models/TripStop.js");
 const Activity = require("./models/Activity.js");
 const userRoutes = require("./routes/userRoutes.js")
+const verification = require("./middleware/jsonverification.js")
 
 app.use(cors());
 app.use(express.json());
@@ -231,6 +232,48 @@ app.put("/tripstop/:stopId", async (req, res) => {
         });
     }
 });
+
+app.post("/api/create_trip", verification, async (req, res) => {
+    try {
+        const {
+            name,
+            description,
+            start_date,
+            end_date,
+            cover_photo_url
+        } = req.body;
+
+        if (!name || !start_date || !end_date) {
+            return res.status(400).json({
+                message: "Trip name, start date and end date are required"
+            });
+        }
+
+        const trip = await Trip.create({
+            user_id: req.user.id,
+            name,
+            description: description || "",
+            start_date,
+            end_date,
+            cover_photo_url: cover_photo_url || "",
+            status: "draft"
+        });
+
+        res.status(201).json({
+            message: "Trip created successfully",
+            trip
+        });
+
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            message: "Failed to create trip",
+            error: error.message
+        });
+    }
+});
+
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);

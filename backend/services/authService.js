@@ -1,6 +1,6 @@
 const jwt =require("jsonwebtoken")
 const User=require("../models/User")
-const secret_key="Something"
+const secret_key="something"
 
 const login= async (email,password_hash)=>{
     const user=await User.findOne({email})
