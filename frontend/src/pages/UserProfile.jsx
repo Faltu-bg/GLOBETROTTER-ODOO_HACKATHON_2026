@@ -2,6 +2,7 @@ import ProfileHeader from '../components/ProfileHeader'
 import Preferences from '../components/Preferences'
 import TripSection from '../components/TripSection'
 import Delete from '../components/Delete'
+import Navbar from '../components/Navbar'
 
 const UserProfile = () => {
 
@@ -48,6 +49,8 @@ const UserProfile = () => {
   ]
 
   return (
+    <div>
+        <Navbar/>
     <div className="min-h-screen bg-[#F7F4EC] px-6 py-10">
 
       <div className="max-w-6xl mx-auto">
@@ -86,6 +89,7 @@ const UserProfile = () => {
 
       </div>
 
+    </div>
     </div>
   )
 }
